@@ -1,11 +1,11 @@
 import React from 'react'
-
-import Routes from './routes'
+import Card from './components/Card'
 
 export default () => (
-  <React.Fragment>
-    <Routes />
-  </React.Fragment>
+  <div>
+    <Card />
+  </div>
+
 )
 
 
