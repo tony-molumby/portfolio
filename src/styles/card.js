@@ -1,3 +1,14 @@
+const createRule = (name, param) => {
+    name = name.toLowerCase()
+    let capitalize = name.charAt(0).toUpperCase() + name.slice(1)
+    return {
+        ['Webkit' + capitalize]: param,
+        ['Moz' + capitalize]: param,
+        ['ms' + capitalize]: param,
+        ['O' + capitalize]: param,
+        [name]: param
+    }
+}
 
 export default {
     borderRadius: '16px',
@@ -21,8 +32,8 @@ export default {
     closeButton: {
         default: {
             display: 'none',
-            transition: `opacity 500ms ease-in-out`,
-            opacity: 0
+            opacity: 0,
+            ...createRule('transition', 'opacity 500ms ease-in-out')
         },
         transition: {
           entering: { display: 'block', position: 'absolute', opacity: 1 },
@@ -31,21 +42,26 @@ export default {
     },
     
     card: {
-        default: {
-            borderRadius: '16px',
-            display: 'grid',
-            position: 'relative',
-            gridTemplateRows: 'auto auto',
-            cursor: 'pointer',
-            backgroundColor: 'red',
-            height: '100%'
+        zoomIn: {
+                width: '100vw', 
+                height: '100vh',
+                borderRadius: '0px',
+                backgroundColor: 'red',
+                overflowY: 'scroll',
+                cursor: 'default',
+                zIndex: 8
         }
     },
 
     cardHolder: {
         default: {
-            justifySelf: 'center',
-            backgroundColor: 'blue'
+            justifySelf: 'center'
+        },
+        zoomIn: {
+            ...createRule('transform','scaleY(1.1)')
+        },
+        zoomOut: {
+            ...createRule('transform','scaleY(1.0)')
         }
     }
 }
