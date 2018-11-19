@@ -46,7 +46,6 @@ export default {
                 width: '100vw', 
                 height: '100vh',
                 borderRadius: '0px',
-                backgroundColor: 'red',
                 overflowY: 'scroll',
                 cursor: 'default',
                 zIndex: 8
