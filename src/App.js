@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {useRef, useGlobal} from 'reactn'
+import {Transition} from 'react-transition-group'
 import Card from './components/Card'
 import CardContent from '././content/card'
 
+import styles from './styles/card'
 
 export default () => {
+  let blurRef = useRef(null)
+  const [isZoomed, setIsZoomed] = useGlobal('isZoomed')
+
   function makeCards() {
     let contentArr = []
     let cardArr = []
@@ -28,7 +33,22 @@ export default () => {
 
   return (
     <div className='container'>
-      {cardList}
+    <Transition 
+      in={isZoomed}
+      timeout={199}
+      >
+      {(state) => (
+        <div 
+          className='blur'
+          style={{
+            ...styles.blur.default,
+            ...styles.blur.transition[state]
+          }}
+          ref={(div) => blurRef = div}>
+        </div>
+      )}
+    </Transition>
+    {cardList}
     </div>
   )    
   

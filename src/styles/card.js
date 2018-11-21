@@ -19,11 +19,12 @@ export default {
         default: {
             display: 'none',
             transition: `opacity 500ms ease-in-out`,
-            opacity: 0
+            opacity: 0,
+            backgroundColor: 'white'
         },
         transition: {
-            entering: { display: 'inline-block', height: 0, opacity: 0 },
-            entered: { display: 'inline-block', height: 'auto', opacity: 1 },
+            entering: { height: 0, opacity: 0 },
+            entered: { display: 'block', height: 'auto', opacity: 1, zIndex: 5 },
             exiting: { opacity: 0, height: 0},
             exited: {display: 'none'}
         }
@@ -43,24 +44,36 @@ export default {
     
     card: {
         zoomIn: {
-                width: '100vw', 
-                height: '100vh',
-                borderRadius: '0px',
-                overflowY: 'scroll',
-                cursor: 'default',
-                zIndex: 8
+            width: '100vw', 
+            height: '100vh',
+            maxWidth: '1200px',
+            borderRadius: '0px',
+            overflowY: 'scroll',
+            cursor: 'default',
+            left: '0px',
+            zIndex: 6,
+            margin: '0px',
+            gridTemplateRows: '75% auto'
         }
     },
 
-    cardHolder: {
-        default: {
-            justifySelf: 'center'
-        },
+    cardHeader: {
         zoomIn: {
-            ...createRule('transform','scaleY(1.1)')
+            width: '100%',
+            height: 'auto'
+        }
+    },
+
+    blur: {
+        default: {
+            position: 'fixed',
+            display: 'none',
         },
-        zoomOut: {
-            ...createRule('transform','scaleY(1.0)')
+        transition: {
+            entering: { display: 'inline-block', height:'100%', width: '100%', opacity: 0 },
+            entered: { display: 'inline-block', opacity: 0.7, zIndex: 5 },
+            exiting: { opacity: 0, height: 0},
+            exited: {display: 'none'}
         }
     }
 }
