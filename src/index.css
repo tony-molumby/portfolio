@@ -1,19 +1,19 @@
 body {
     margin: 0px;
-    background-image: url('http://i.imgur.com/3fBDYDq.jpg')
+    background-color: rgb(148, 170, 243);
 }
 
 .container {
     display: grid;
     width: 100%;
-    background-image: url('http://i.imgur.com/3fBDYDq.jpg')
 }
 
 .card {
     border-radius: 16px;
     justify-self: center;
     position: relative;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     cursor: pointer;
     height: 100%;
@@ -31,13 +31,16 @@ body {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+/* additional styles for animation inline */
 .card-header {
     display: grid;
-    grid-column: 1/2;
-    grid-row: 1/2;
+    /* grid-column: 1/2;
+    grid-row: 1/2; */
+    height: 100%;
     grid-template-rows: auto auto;
     grid-template-columns: auto auto;
     z-index: 2;
+    background-color: white;
 }
 
 .card-title {
@@ -50,8 +53,6 @@ body {
 }
 
 .card-subtitle {
-    grid-column: 1/2;
-    grid-row: 2/3;
     color: white;
     align-self: end;
     padding: 10px 20px;
@@ -60,7 +61,6 @@ body {
 
 .content {
     padding: 20px;
-    grid-row: 2/3;
 }
 
 .card-title-bg {
@@ -74,7 +74,6 @@ body {
   .blur {
       height: 100%;
       width: 100%;
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: all 0.3s cubic-bezier(.25,.8,.25,1);
       background-color: white;
+      z-index: 1;
   }

@@ -2,15 +2,13 @@ import React, {useEffect} from 'react'
 
 export default ({title, subtitle, src, cardHeaderRef, getImageSize}) => {
 
-    useEffect(() => {
-      
-    })
     return (
         <div 
             className='card-header' 
             ref={cardHeaderRef} 
-            style={{ 
-                backgroundPosition: 'center', 
+            style={{
+                backgroundImage: 'url(' + src + ')', 
+                backgroundPosition: 'center top', 
                 backgroundRepeat: 'no-repeat', 
                 backgroundSize: 'auto 100%'
             }} 

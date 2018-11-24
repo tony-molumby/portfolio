@@ -35,7 +35,7 @@ export default () => {
     <div className='container'>
     <Transition 
       in={isZoomed}
-      timeout={199}
+      timeout={300}
       >
       {(state) => (
         <div 

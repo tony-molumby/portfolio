@@ -18,14 +18,23 @@ export default {
     content: {
         default: {
             display: 'none',
-            transition: `opacity 500ms ease-in-out`,
-            opacity: 0,
-            backgroundColor: 'white'
+            transition: `all 500ms ease-in-out`,
+            backgroundColor: 'white',
+            position: 'absolute',
+            top: '75%',
+            width: '100%',
+            height: 'auto',
         },
         transition: {
-            entering: { height: 0, opacity: 0 },
-            entered: { display: 'block', height: 'auto', opacity: 1, zIndex: 5 },
-            exiting: { opacity: 0, height: 0},
+            entering: { 
+                ...createRule('transition', 'translate(0%, -100%)'),
+            },
+            entered: { 
+                display: 'block',
+                ...createRule('transition', 'translate(0%, 0%)'), 
+                zIndex: 5 
+            },
+            exiting: { ...createRule('transition', 'translate(0%, -100%'),},
             exited: {display: 'none'}
         }
     },
@@ -53,14 +62,14 @@ export default {
             left: '0px',
             zIndex: 6,
             margin: '0px',
-            gridTemplateRows: '75% auto'
         }
     },
 
     cardHeader: {
         zoomIn: {
             width: '100%',
-            height: 'auto'
+            maxHeight: '75%',
+            // backgroundSize: '100% auto'
         }
     },
 

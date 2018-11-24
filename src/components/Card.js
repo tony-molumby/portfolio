@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {useGlobal} from 'reactn'
 
 import {TweenLite, Back} from 'gsap/TweenMax'
@@ -12,15 +12,38 @@ import CardHeader from './CardHeader';
 export default ({title, subtitle, src, content}) => {
     let cardRef = useRef(null)
     let cardHeaderRef = useRef(null)
-    let blurRef = useRef(null)
-    //animation references
+   
+   //animation references
     let zoom = useRef(null)
-    let removeCorners = useRef(null)
-    let blurBackground = useRef(null)
+    let zoomHeader = useRef(null)
 
     const [cardSize, setCardSize] = useGlobal('cardSize')
     const [isZoomed, setIsZoomed] = useGlobal('isZoomed')
-    const [imgSize, setImgSize] = useGlobal('imgSize')    
+    const [imgSize, setImgSize] = useState({width: 0, height: 0})
+
+    useEffect(()=>{
+        var img = new Image();
+        img.onload = function() {
+            console.log(this.width + 'x' + this.height)
+        }
+        img.src = src
+        window.addEventListener('resize', handleResize)
+        return function (){
+            window.removeEventListener('resize', handleResize)
+        }
+    })
+
+    function handleResize() {
+        let width = window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+
+        let height = window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight;
+        
+        setImgSize({width: width, height: height})
+    }
 
     function zoomIn() {
         setIsZoomed(true)
@@ -34,23 +57,20 @@ export default ({title, subtitle, src, content}) => {
                 ...styles.card.zoomIn
             }
         )
-        
-        removeCorners.current = TweenLite.to(
+        zoomHeader.current = TweenLite.to(
             cardHeaderRef.current, 0.5, {
-                borderRadius: '0px',
+                ...{borderRadius: '0px'},
+                ...styles.cardHeader.zoomIn
             }
         )
         
-        blurBackground.current = TweenLite.to(
-            blurRef.current, 0.2, styles.blur.zoomIn
-        )
     }
 
     function zoomOut() {
         setIsZoomed(false)
         document.body.style.overflowY = 'scroll'
         zoom.current.reversed(true)
-        removeCorners.current.reversed(true)
+        zoomHeader.current.reversed(true)
     }
 
     function toggleZoom() {
@@ -70,7 +90,7 @@ export default ({title, subtitle, src, content}) => {
                 src={src}
                 cardHeaderRef={cardHeaderRef}
                 />
-            <Transition in={isZoomed} timeout={199} >
+            <Transition in={isZoomed} timeout={200} >
                 {(state) => (
                     <div 
                         className='content'
