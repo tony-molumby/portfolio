@@ -1,6 +1,10 @@
 import React, {useEffect} from 'react'
+import {Transition} from 'react-transition-group'
+import CloseBtn from '../components/CloseBtn'
 
-export default ({title, subtitle, src, cardHeaderRef, getImageSize}) => {
+import styles from '../styles/card'
+
+export default ({title, subtitle, src, cardHeaderRef, isZoomed, toggleZoom}) => {
 
     return (
         <div 
@@ -10,11 +14,27 @@ export default ({title, subtitle, src, cardHeaderRef, getImageSize}) => {
                 backgroundImage: 'url(' + src + ')', 
                 backgroundPosition: 'center top', 
                 backgroundRepeat: 'no-repeat', 
-                backgroundSize: 'auto 100%'
+                backgroundSize: 'cover'
             }} 
             >
             <div className='card-title-bg' />
             <h2 className='card-title'>{title}</h2>
+            <Transition in={isZoomed} timeout={200} >
+				{(state) => (
+					<div className='close-btn'
+						style={{
+							...styles.closeBtn.default,
+							...styles.closeBtn.transition[state]
+						}} >
+                        <CloseBtn 
+                            onClick={toggleZoom} 
+                            height='40px' 
+                            width='40px'
+                            className='close-path' 
+                            />
+					</div>
+				)}
+			</Transition> 
             <div className='card-subtitle'>
                 <p>{subtitle}</p>
             </div>

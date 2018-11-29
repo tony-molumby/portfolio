@@ -17,7 +17,7 @@ export default {
 
     content: {
         default: {
-            display: 'none',
+            display: 'inline',
             transition: `all 500ms ease-in-out`,
             backgroundColor: 'white',
             position: 'absolute',
@@ -28,25 +28,29 @@ export default {
         transition: {
             entering: { 
                 ...createRule('transition', 'translate(0%, -100%)'),
+                display: 'block',
+                opacity: 0
             },
             entered: { 
                 display: 'block',
                 ...createRule('transition', 'translate(0%, 0%)'), 
-                zIndex: 5 
+                zIndex: 5,
+                opacity: 1
             },
             exiting: { ...createRule('transition', 'translate(0%, -100%'),},
             exited: {display: 'none'}
         }
     },
 
-    closeButton: {
+    closeBtn: {
         default: {
             display: 'none',
             opacity: 0,
             ...createRule('transition', 'opacity 500ms ease-in-out')
         },
         transition: {
-          entering: { display: 'block', position: 'absolute', opacity: 1 },
+          entering: { display: 'block', padding: '25px 20px',  opacity: 1 },
+          entered: {display: 'block', padding: '25px 20px', opacity: 1 },
           exiting: { display: 'none', opacity: 0 }
         },
     },
@@ -67,9 +71,7 @@ export default {
 
     cardHeader: {
         zoomIn: {
-            width: '100%',
-            maxHeight: '75%',
-            // backgroundSize: '100% auto'
+            height: '75%'
         }
     },
 

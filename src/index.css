@@ -52,6 +52,16 @@ body {
     padding: 10px 20px;
 }
 
+.close-btn {
+    grid-column: 2/3;
+    grid-row: 1/2; 
+    cursor: pointer;
+}
+
+.close-path {
+    fill: white;
+}
+
 .card-subtitle {
     color: white;
     align-self: end;

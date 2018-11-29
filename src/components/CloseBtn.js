@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default ({onClick, height, width, className}) => {
     return (
       <div onClick={onClick} >
