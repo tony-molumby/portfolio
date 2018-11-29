@@ -49,8 +49,8 @@ export default {
             ...createRule('transition', 'opacity 500ms ease-in-out')
         },
         transition: {
-          entering: { display: 'block', padding: '25px 20px',  opacity: 1 },
-          entered: {display: 'block', padding: '25px 20px', opacity: 1 },
+          entering: { display: 'inline-block', position: 'absolute', top: '25px', right: '20px',  opacity: 1 },
+          entered: {display: 'inline-block', position: 'absolute', top: '25px', right: '20px', opacity: 1 },
           exiting: { display: 'none', opacity: 0 }
         },
     },
