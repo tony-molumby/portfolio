@@ -12,7 +12,7 @@ export default ({title, subtitle, src, content}) => {
     let cardRef = useRef(null)
     let cardHeaderRef = useRef(null)
    
-   //animation references
+   //animation references   
     let zoom = useRef(null)
     let zoomHeader = useRef(null)
 
