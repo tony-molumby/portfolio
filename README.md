@@ -1,3 +1,3 @@
-### App Store Card
+### Portfolio Site
 
-This repo is my attempt to recreate the cards on the iOS app store browsing list using React 16.7.0 alpha.
+The new version of my portfolio site using React 16.7 alpha 

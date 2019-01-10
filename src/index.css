@@ -1,6 +1,15 @@
+
+@font-face {
+    font-family: 'badaboom_bbregular';
+    src: url('./fonts/badaboom-bb.regular-webfont.woff2') format('woff2'),    
+    url('./fonts/badaboom-bb.regular-webfont.woff') format('woff');   
+    font-weight: normal;
+    font-style: normal; 
+}
+
 body {
+    font-family: 'badaboom_bbregular', Verdana, Geneva, Tahoma, sans-serif;
     margin: 0px;
-    background-color: rgb(148, 170, 243);
 }
 
 .container {
@@ -8,6 +17,83 @@ body {
     width: 100%;
 }
 
+a {
+    color: inherit;
+}
+
+ /* ============ Navigation Styles */
+
+ .nav-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .nav {
+      width: 100%;
+      height: 67px;
+      background-color: #003E6F;
+      border-bottom: 2px black solid;
+  }
+
+  .home-link {
+      min-width:20%;
+      margin-left: 20px;
+      text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+   
+  }
+
+  .nav-link {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .nav-link:hover {
+      text-decoration: underline;
+  }
+
+  #home-link-text {
+    width: 42px;
+    text-align: center;
+    padding-right: 2px;
+    border: 3px solid white;
+  }
+
+  .red-text-box {
+    color: white;
+    background-color: #FF0000;
+  }
+
+  .shadow {
+    text-shadow: 1px 1px #000000;
+  }
+
+/* =========== Social Icon Styles */
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #FA7D16;
+}
+
+
+
+
+
+
+
+/* ============== Card Styles */
 .card {
     border-radius: 16px;
     justify-self: center;
@@ -88,3 +174,5 @@ body {
       background-color: white;
       z-index: 1;
   }
+
+ 

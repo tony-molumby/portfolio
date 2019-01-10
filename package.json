@@ -1,15 +1,15 @@
 {
-  "name": "frontend_boilerplate",
+  "name": "tony-molumby-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "gsap": "^2.0.2",
-    "react": "^16.7.0-alpha.0",
-    "react-dom": "^16.7.0-alpha.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.1",
-    "react-transition-group": "^2.5.0",
-    "reactn": "^0.1.0"
+    "react-scripts": "^2.1.3",
+    "react-transition-group": "^2.5.2",
+    "reactn": "^0.1.9"
   },
   "scripts": {
     "start": "react-scripts start",
