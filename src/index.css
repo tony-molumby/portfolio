@@ -22,13 +22,6 @@ a {
 
 /* Navigation Styles ========== */
 
- .nav-flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-
   #nav {
       width: 100%;
       height: 64px;
@@ -37,21 +30,22 @@ a {
       grid-row: 1/2;
       display: grid;
       grid-template-columns: auto auto auto;
-      /* grid-template-rows */
+      grid-template-rows: auto;
   }
 
-  .home-link {
+  #home-link {
+      grid-column: 1/2;
+      grid-row: 1/2;
       min-width: 20%;
       text-decoration: none;
       margin-left: 20px;
   }
 
-  .nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
-    /* margin: 0px 20px 0px 20px; */
+  #nav-links {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    align-self: center;
+    margin: 0px 20px 0px 20px;
   }
 
   .nav-link {
@@ -104,7 +98,7 @@ a {
     grid-column: 1/5;
     grid-row: 1/4;
     background-color: pink;
-    background: url(images/Headshot.png) no-repeat; 
+    background: url(images/headshot.png) no-repeat; 
     background-size: contain;
     background-position: center;
     margin: 30px 0px 0px -50px;
@@ -116,19 +110,22 @@ a {
     border-width: 2px 2px 2px 0px;
     border-color: black;
     border-style: solid;
-    padding-left: 20px;
-    
+    padding: 5px 10px 5px 20px;
+    display: flex;
+    align-self: center;
 }
 
-.subheading {
-    grid-column: 1/2;
-    grid-row: 3/4;
-    width: 100%;
+
+#burst-background {
+    grid-column: 1/5;
+    grid-row: 1/6;
+    z-index: -2;
+    
 }
 
 /* Social Icon Styles ========== */
 
-.social-icons {
+#social-icons {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -196,8 +193,6 @@ a.social-links {
 /* additional styles for animation inline */
 .card-header {
     display: grid;
-    /* grid-column: 1/2;
-    grid-row: 1/2; */
     height: 100%;
     grid-template-rows: auto auto;
     grid-template-columns: auto auto;
@@ -251,4 +246,28 @@ a.social-links {
     z-index: 1;
   }
 
- 
+/* Media Queries ========== */
+
+  /* Home Screen ========== */
+  @media only screen and (min-width: 700px) {
+
+    #home-link {
+      grid-column: 2/3;
+    }
+
+    #home-subheading {
+        grid-column: 1/5;
+        justify-self: center;
+        border-width: 2px;
+        padding-right: 20px;
+    }
+    
+    #social-icons {
+        justify-content: center;
+    }
+
+    .social-links {
+        padding: 20px;
+    }
+   
+  }
