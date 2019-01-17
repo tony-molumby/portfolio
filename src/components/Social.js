@@ -25,8 +25,8 @@ const content = [
 
 let icons = content.map((item, i) => {
   return (
-    <a href={item.url} className='social-links'>
-      <i key={'social-' + i} className={item.icon + ' social-icon'} ></i>
+    <a key={'social-' + i} href={item.url} className='social-links'>
+      <i className={item.icon + ' social-icon'} ></i>
       <div className='social-text'>{item.text}</div>
     </a>
   )
