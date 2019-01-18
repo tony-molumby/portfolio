@@ -12,7 +12,7 @@ export default (props) => (
     <div id='headshot'></div>
     <h2 
       id='home-subheading' 
-      className='shadow red-text-box subheading'
+      className='shadow red-text-box subheading box-shadow'
       >
       Web Developer, Product Owner, Clinician... and Super Hero?
     </h2>
