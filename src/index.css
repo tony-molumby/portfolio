@@ -111,7 +111,7 @@ p {
 
 #home {
     display: grid;
-    grid-template-rows: 1fr 3fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr;
     grid-template-columns:  2fr auto 1fr 1fr;
     width: 100%;
     height: auto;
@@ -135,6 +135,7 @@ p {
     background-size: contain;
     background-position: center;
     margin: 30px 0px 0px -50px;
+    max-height: 500px;
 }
 
 #home-subheading {
@@ -378,6 +379,14 @@ a.social-links {
         grid-column: 2/4;
     }
     
+  
 
 
+  }
+
+  @media only screen and (min-height: 800px) {
+      #footer {
+          position: fixed;
+          bottom: 0;
+      }
   }
