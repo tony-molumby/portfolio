@@ -32,8 +32,8 @@ let icons = content.map((item, i) => {
   )
 })
 
-export default (props) => (
-  <div id='social-icons'>
+export default ({id}) => (
+  <div id={id} className='social'>
     {icons}
   </div>
 )

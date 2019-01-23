@@ -16,7 +16,7 @@ export default (props) => (
       >
       Web Developer, Product Owner, Clinician... and Super Hero?
     </h2>
-    <Social />
+    <Social id='social-home' />
     {/* <BurstBackground id='burst-background'/> */}
   </div>
 )

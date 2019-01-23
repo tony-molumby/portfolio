@@ -8,7 +8,7 @@ import {Transition} from 'react-transition-group'
 import styles from '../styles/card'
 import CardHeader from './CardHeader';
 
-export default ({title, subtitle, src, content}) => {
+export default ({title, icon, subtitle, src, content}) => {
     let cardRef = useRef(null)
     let cardHeaderRef = useRef(null)
    
@@ -62,6 +62,7 @@ export default ({title, subtitle, src, content}) => {
             >
             <CardHeader 
                 title={title}
+                icon={icon}
                 subtitle={subtitle}
                 src={src}
                 cardHeaderRef={cardHeaderRef}

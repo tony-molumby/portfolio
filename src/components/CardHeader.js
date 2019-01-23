@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {Transition} from 'react-transition-group'
 import CloseBtn from '../components/CloseBtn'
 
@@ -10,13 +10,14 @@ export default ({title, subtitle, src, cardHeaderRef, isZoomed, toggleZoom}) => 
         <div 
             className='card-header' 
             ref={cardHeaderRef} 
-            style={{
-                backgroundImage: 'url(' + src + ')', 
-                backgroundPosition: 'center top', 
-                backgroundRepeat: 'no-repeat', 
-                backgroundSize: 'cover'
-            }} 
+            // style={{
+            //     backgroundImage: 'url(' + src + ')', 
+            //     backgroundPosition: 'center top', 
+            //     backgroundRepeat: 'no-repeat', 
+            //     backgroundSize: 'cover'
+            // }} 
             >
+            <i className={src + ' card-icon'}></i>
             <div className='card-title-bg' />
             <h2 className='card-title'>{title}</h2>
             <Transition in={isZoomed} timeout={200} >
@@ -35,9 +36,9 @@ export default ({title, subtitle, src, cardHeaderRef, isZoomed, toggleZoom}) => 
 					</div>
 				)}
 			</Transition> 
-            <div className='card-subtitle'>
+            {/* <div className='card-subtitle'>
                 <p>{subtitle}</p>
-            </div>
+            </div> */}
         </div>
     )
 }

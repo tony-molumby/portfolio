@@ -1,4 +1,4 @@
-export default createRule = (name, param) => {
+export default (name, param) => {
   name = name.toLowerCase()
   let capitalize = name.charAt(0).toUpperCase() + name.slice(1)
   return {
