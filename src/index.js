@@ -8,7 +8,7 @@ import {setGlobal} from 'reactn'
 setGlobal({
   isZoomed: false,
   index: null,
-  cardSize: {width: '300px', height: '300px'},
+  cardSize: {width: '250px', height: '250px'},
   imgSize: {}
 })
 

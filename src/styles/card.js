@@ -47,13 +47,14 @@ export default {
     
     card: {
         zoomIn: {
-            width: '100vw', 
-            height: '100vh',
+            width: '100%', 
+            height: '100%',
             maxWidth: '1200px',
             borderRadius: '0px',
             overflowY: 'scroll',
             cursor: 'default',
             left: '0px',
+            position: 'fixed',
             zIndex: 6,
             margin: '0px',
         }

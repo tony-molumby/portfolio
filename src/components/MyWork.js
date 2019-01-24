@@ -2,9 +2,9 @@ import React from 'react'
 import WorkCards from './WorkCards'
 
 import items from '../content/mywork'
-
+console.log(items[0])
 export default (props) => (
-  <div className='page'>
+  <div id='mywork'>
     <div id='mywork-banner' className='banner'></div>
     <h2 id='mywork-subheading' className='shadow red-text-box subheading page-subheading'>With His Newfound Powers...</h2>
     <div id='mywork-content' className='content comic-font'>
@@ -33,10 +33,12 @@ export default (props) => (
         <h2 id='mywork-samples-heading' className='boom-font'>Samples of my work</h2>
       </div>
     </div>
-    {/* <h2 id='about-action-text'>Call to Action Text</h2> */}
     <WorkCards
-      
-      items={items}
-    />
+      id='mywork-cards'
+      className='comic-font'
+      items={items.design}
+      />
+    {/* <h2 id='about-action-text'>Call to Action Text</h2> */}
+    
   </div>
 )

@@ -4,7 +4,7 @@ import CloseBtn from '../components/CloseBtn'
 
 import styles from '../styles/card'
 
-export default ({title, subtitle, src, cardHeaderRef, isZoomed, toggleZoom}) => {
+export default ({title, subtitle, icon, src, cardHeaderRef, isZoomed, toggleZoom}) => {
 
     return (
         <div 
@@ -17,7 +17,7 @@ export default ({title, subtitle, src, cardHeaderRef, isZoomed, toggleZoom}) => 
             //     backgroundSize: 'cover'
             // }} 
             >
-            <i className={src + ' card-icon'}></i>
+            <i className={icon + ' card-icon'}></i>
             <div className='card-title-bg' />
             <h2 className='card-title'>{title}</h2>
             <Transition in={isZoomed} timeout={200} >
