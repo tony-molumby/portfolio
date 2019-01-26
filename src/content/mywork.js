@@ -3,7 +3,7 @@ export default {
     {
       icon: 'fas fa-ad',
       title: 'Post Acute Care Search',
-      imageName: '',
+      src: 'patientList.svg',
       content: 
         `
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -14,7 +14,7 @@ export default {
     {
       icon: 'fas fa-ad',
       title: 'Patient Dashboard',
-      imageName: '',
+      src: 'patientDashboard.png',
       content: 
       `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -25,7 +25,7 @@ export default {
     {
       icon: 'fas fa-ad',
       title: 'Provider Portal',
-      imageName: '',
+      src: 'providerPortal.png',
       content: 
       `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -38,7 +38,7 @@ export default {
     {
       icon: 'fas fa-ad',
       title: 'Meeting Search',
-      imageName: '',
+      src: 'meetingSearch.png',
       content: 
       `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -50,7 +50,7 @@ export default {
     {
       icon: 'fas fa-ad',
       title: 'Game Of Life',
-      imageName: '',
+      src: 'gameOfLife.png',
       content: 
         `
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -63,7 +63,7 @@ export default {
     {
       icon: 'fas fa-ad',
       title: 'iOS App Store Cards',
-      imageName: '',
+      src: 'appStoreCard.jpg',
       content: 
         `
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -77,7 +77,7 @@ export default {
     {
       icon: 'fas fa-ad',
       title: 'Contact Page',
-      imageName: '',
+      src: 'contactPage.png',
       content: 
         `
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -89,7 +89,7 @@ export default {
     {
       icon: 'fas fa-ad',
       title: 'Memory Game',
-      imageName: '',
+      src: 'memoryGame.png',
       content: 
         `
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 

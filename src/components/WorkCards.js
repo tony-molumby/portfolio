@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Card from './CardOld'
+import Card from './Card'
 
 export default ({items, id, className}) => {
   return (
@@ -11,7 +11,7 @@ export default ({items, id, className}) => {
               <Card 
                 title={item.title}
                 icon={item.icon}
-                src={item.imageName}
+                src={item.src}
                 content={item.content}
                 key={'card-' + idx}
                 />

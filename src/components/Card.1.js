@@ -22,13 +22,18 @@ export default ({title, icon, subtitle, src, content}) => {
     function zoomIn() {
         setIsZoomed(true)
         document.body.style.overflow = 'hidden'
-        let cardTop = cardRef.getBoundingClientRect().top + 10 + 'px'
-        console.log(cardTop)
+        let cardTop = -cardRef.getBoundingClientRect().top + 'px'
         let cardLeft = -cardRef.getBoundingClientRect().left + 'px'
+        console.log('top: ' + cardTop)
+        console.log('left: ' + cardLeft)
         zoom.current = TweenLite.to(
             cardRef, 0.2, 
             {
-                ...{top: 0, ease: Back.easeIn.config(1.7)},
+                ...{ 
+                    position: 'relative', 
+                    top: cardTop,
+                    ease: Back.easeIn.config(1.7)
+                },
                 ...styles.card.zoomIn,
             }
         )

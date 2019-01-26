@@ -2,7 +2,7 @@ import React from 'react'
 import WorkCards from './WorkCards'
 
 import items from '../content/mywork'
-console.log(items[0])
+
 export default (props) => (
   <div id='mywork'>
     <div id='mywork-banner' className='banner'></div>

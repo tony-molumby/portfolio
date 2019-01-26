@@ -2,18 +2,14 @@ import createRule from './createRule'
 
 export default {
     borderRadius: '16px',
-    padding: '20px',
-    cardWidth: '400px',
-
     content: {
         default: {
-            display: 'inline',
+            // display: 'inline',
             transition: `all 500ms ease-in-out`,
             backgroundColor: 'white',
-            position: 'absolute',
-            top: '75%',
-            width: '100%',
-            height: 'auto',
+            padding: '20px',
+            // width: '100%',
+            height: '100%',
         },
         transition: {
             entering: { 
@@ -48,21 +44,21 @@ export default {
     card: {
         zoomIn: {
             width: '100%', 
-            height: '100%',
+            height: '200px',
+            // justifySelf: 'center',
             maxWidth: '1200px',
             borderRadius: '0px',
             overflowY: 'scroll',
             cursor: 'default',
-            left: '0px',
-            position: 'fixed',
             zIndex: 6,
             margin: '0px',
+            backgroundColor: 'white'
         }
     },
 
     cardHeader: {
         zoomIn: {
-            height: '75%'
+            height: '40%'
         }
     },
 
