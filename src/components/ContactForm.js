@@ -43,7 +43,7 @@ class ContactForm extends Component {
                             placeholder="name"
                             type="text"
                             name='name' 
-                            className="inputs" 
+                            className="inputs comic-font" 
                             value={name}
                             onChange={this.handleChange}
                         />
@@ -52,7 +52,7 @@ class ContactForm extends Component {
                         {emailErr}
                         <input 
                             placeholder="email" 
-                            className="inputs" 
+                            className="inputs comic-font" 
                             name="email"
                             type='email'
                             value={email}
@@ -63,7 +63,7 @@ class ContactForm extends Component {
                         {messageErr}
                         <textarea
                             placeholder="type in a message" 
-                            className="message"
+                            className="message comic-font"
                             name="message"
                             value={message} 
                             onChange={this.handleChange}
@@ -77,7 +77,7 @@ class ContactForm extends Component {
                             value="New Message from your portfolio site!"
                         />
                     </div>
-                    <input id="submit" type="submit" value='send' />
+                    <input id="submit" className='comic-font' type="submit" value='send' />
                     <div id="send-message">{sendMessage}</div>
                 </form>
             </div>

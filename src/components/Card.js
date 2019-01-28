@@ -22,8 +22,8 @@ export default ({title, icon, subtitle, src, content}) => {
 
     function zoomIn() {
         setIsZoomed(true)
-        let moveX = '0px'
         let zoomFactor = 1.5
+        document.body.style.overflow = 'hidden'
         let cardWidth = (parseInt(cardSize.width))
         let screenCenter = (window.innerWidth
             || document.documentElement.clientWidth
@@ -31,14 +31,7 @@ export default ({title, icon, subtitle, src, content}) => {
         let cardTop = -cardRef.getBoundingClientRect().top + 50 + 'px'
         let cardLeft = cardRef.getBoundingClientRect().left 
         let cardCenter = cardLeft + (cardWidth * zoomFactor / 2)
-        document.body.style.overflow = 'hidden'
-        moveX = screenCenter - cardCenter 
-        
-        console.log('screenCenter: ' + screenCenter)
-        console.log('move: ' + moveX)
-        console.log('top: ' + cardTop)
-        console.log('left: ' + cardLeft) 
-        console.log('center: ' + cardCenter)
+        let moveX = screenCenter - cardCenter + 'px'
         
         zoom.current = new TimelineLite()
         zoom.current.to(cardRef, 0.1, {
@@ -50,23 +43,11 @@ export default ({title, icon, subtitle, src, content}) => {
             height: zoomFactor * 100 + '%'
         })
 
-        
-
         zoom.current.play()
-            
-        // zoomHeader.current = TweenLite.to(
-        //     cardHeaderRef.current, 0.5, {
-        //         // ...{borderRadius: '0px' },
-        //         // ...styles.cardHeader.zoomIn
-        //     }
-        // )
-        
     }
 
     function zoomOut() {
         setIsZoomed(false)
-        cardRef.style.width = cardSize.width
-        cardRef.style.height = cardSize.height
         document.body.style.overflowY = 'scroll'
         zoom.current.reversed(true)
     }

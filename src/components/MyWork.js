@@ -6,7 +6,7 @@ import items from '../content/mywork'
 export default (props) => (
   <div id='mywork'>
     <div id='mywork-banner' className='banner'></div>
-    <h2 id='mywork-subheading' className='shadow red-text-box subheading page-subheading'>With His Newfound Powers...</h2>
+    <h2 id='mywork-subheading' className='shadow red-text-box subheading page-subheading'>With My Newfound Powers...</h2>
     <div id='mywork-content' className='content comic-font'>
       <p>
       I have worked with large and small organizations in a variety 
