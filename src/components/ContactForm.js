@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+
 class ContactForm extends Component {
     constructor(props){
         super(props);
@@ -11,14 +12,37 @@ class ContactForm extends Component {
             emailErr: "",
             messageErr: "",
             sendMessage: "",
+            disabled: 'disabled',
+            submitButton: <input id='submit' className='comic-font' type="submit" value='send' disabled />
         }
     }
 
+    
+
+    componentDidMount() {
+
+    }
+
+
     handleChange = (e) => {
+        let {name, email, message, submitButton} = this.state;
+        let element =''
         this.setState({
             [e.target.name]: e.target.value
+        }, (previousState) => {
+            if(name.length > 1 && email.length > 4 && message.length > 10){
+                element = <input id='submit' className='comic-font' type="submit" value='send' />
+            } else {
+                element = <input id='submit' className='comic-font' type="submit" value='send' disabled />
+            }
+            this.setState({
+                submitButton: element
+            })
+                      
         });
     }
+
+
 
     render(){
         let {
@@ -28,9 +52,10 @@ class ContactForm extends Component {
                 nameErr,
                 emailErr,
                 messageErr,
-                sendMessage
+                sendMessage,
+                submitButton
             } = this.state;
-        
+  
         return (
             <div id={this.props.id}>
                 <form
@@ -77,7 +102,7 @@ class ContactForm extends Component {
                             value="New Message from your portfolio site!"
                         />
                     </div>
-                    <input id="submit" className='comic-font' type="submit" value='send' />
+                    {submitButton}
                     <div id="send-message">{sendMessage}</div>
                 </form>
             </div>
