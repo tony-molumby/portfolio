@@ -7,8 +7,8 @@ export default (props) => (
     <h2 id='about-subheading' className='shadow red-text-box subheading page-subheading'>My ability to control the machines was born...</h2>
     <div id='about-content' className='content comic-font'>
       <h3>
-        Hi, I’m Tony.  I’m a Full-Stack Software Development Engineer, 
-        Certified Scrum Product Owner / Manager, and Clinician.
+        Hi, I’m Tony.  I’m a Full-Stack Software Developer / Engineer, 
+        Certified Scrum Product Owner, and a Clinician.
       </h3>
       <p>  
         I have a passion for technology, consumer applications, 

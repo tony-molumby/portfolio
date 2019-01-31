@@ -281,7 +281,6 @@
     position: relative;
     grid-template-rows: 70vh 3fr 5fr 1fr ;
     grid-template-columns:  1fr 3fr 3fr 1fr;
-    position: relative;
 }
 
 #mywork-banner {
@@ -302,9 +301,9 @@
 }
 
 #mywork-cards {
-    justify-content: center;
     grid-row: 3/4;
     grid-column: 1/5;
+    justify-content: center;
 }
 
 /* Contact Styles ========= */
@@ -365,9 +364,9 @@
     cursor: pointer;
 }
 
-/* #submit:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-} */
+#submit:hover{
+    
+}
 
 
 

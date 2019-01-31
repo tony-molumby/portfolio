@@ -17,20 +17,14 @@ class ContactForm extends Component {
         }
     }
 
-    
-
-    componentDidMount() {
-
-    }
-
-
     handleChange = (e) => {
         let {name, email, message, submitButton} = this.state;
-        let element =''
+        let element = ''
+        let valid = document.getElementById('email').validity.valid
         this.setState({
             [e.target.name]: e.target.value
         }, (previousState) => {
-            if(name.length > 1 && email.length > 4 && message.length > 10){
+            if(name.length > 1 && email.length > 4 && message.length > 10 && valid ){
                 element = <input id='submit' className='comic-font' type="submit" value='send' />
             } else {
                 element = <input id='submit' className='comic-font' type="submit" value='send' disabled />
@@ -62,9 +56,10 @@ class ContactForm extends Component {
                     action="https://formspree.io/tony.molumby@gmail.com"
                     method="POST"
                 >
-                    <div id="name">
+                    <div >
                         {nameErr}
                         <input
+                            id='name'
                             placeholder="name"
                             type="text"
                             name='name' 
@@ -73,9 +68,10 @@ class ContactForm extends Component {
                             onChange={this.handleChange}
                         />
                     </div>
-                    <div id="email">
+                    <div >
                         {emailErr}
                         <input 
+                            id="email"
                             placeholder="email" 
                             className="inputs comic-font" 
                             name="email"
@@ -84,9 +80,10 @@ class ContactForm extends Component {
                             onChange={this.handleChange}
                         />
                     </div>
-                    <div id="message">
+                    <div >
                         {messageErr}
                         <textarea
+                            id="message"
                             placeholder="type in a message" 
                             className="message comic-font"
                             name="message"
