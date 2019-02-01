@@ -5,20 +5,21 @@ import CloseBtn from '../components/CloseBtn'
 import styles from '../styles/card'
 
 export default ({title, subtitle, icon, src, cardHeaderRef, isZoomed, toggleZoom}) => {
+    let imageSrc = require('../images/mywork/' + src)
 
     return (
         <div 
             className='card-header' 
             ref={cardHeaderRef} 
-            // style={{
-            //     backgroundImage: 'url(' + src + ')', 
-            //     backgroundPosition: 'center top', 
-            //     backgroundRepeat: 'no-repeat', 
-            //     backgroundSize: 'cover'
-            // }} 
+            style={{
+                backgroundImage: 'url(' + imageSrc + ')', 
+                backgroundPosition: 'center top', 
+                backgroundRepeat: 'no-repeat', 
+                backgroundSize: 'contain'
+            }} 
             >
-            <i className={icon + ' card-icon'}></i>
-            <div className='card-title-bg' />
+            {/* <i className={icon + ' card-icon'}></i>
+            <div className='card-title-bg' /> */}
             <h2 className='card-title'>{title}</h2>
             <Transition in={isZoomed} timeout={200} >
 				{(state) => (
@@ -36,9 +37,6 @@ export default ({title, subtitle, icon, src, cardHeaderRef, isZoomed, toggleZoom
 					</div>
 				)}
 			</Transition> 
-            {/* <div className='card-subtitle'>
-                <p>{subtitle}</p>
-            </div> */}
         </div>
     )
 }

@@ -1,7 +1,11 @@
 import createRule from './createRule'
 
 export default {
-    borderRadius: '16px',
+    card: {
+        zoomIn: {
+            
+        }
+    },
     content: {
         default: {
             // display: 'inline',
@@ -9,7 +13,7 @@ export default {
             backgroundColor: 'white',
             padding: '20px',
             // width: '100%',
-            height: '100%',
+            // height: '100%',
         },
         transition: {
             entering: { 
@@ -36,31 +40,11 @@ export default {
         },
         transition: {
           entering: { display: 'inline-block', position: 'absolute', top: '25px', right: '20px',  opacity: 1 },
-          entered: {display: 'inline-block', position: 'absolute', top: '25px', right: '20px', opacity: 1 },
+          entered: {display: 'inline-block', position: 'absolute', top: '25px', right: '20px', opacity: 1, cursor: 'pointer' },
           exiting: { display: 'none', opacity: 0 }
         },
     },
     
-    card: {
-        zoomIn: {
-            width: '100%', 
-            height: '200px',
-            // justifySelf: 'center',
-            maxWidth: '1200px',
-            borderRadius: '0px',
-            overflowY: 'scroll',
-            cursor: 'default',
-            zIndex: 6,
-            margin: '0px',
-            backgroundColor: 'white'
-        }
-    },
-
-    cardHeader: {
-        zoomIn: {
-            height: '40%'
-        }
-    },
 
     blur: {
         default: {

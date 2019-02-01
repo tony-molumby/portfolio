@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {Component} from 'react'
 import {useGlobal} from 'reactn'
 
 //animations
@@ -8,87 +8,103 @@ import {Transition} from 'react-transition-group'
 import styles from '../styles/card'
 import CardHeader from './CardHeader';
 
-export default ({title, icon, subtitle, src, content}) => {
-    let cardRef = useRef(null)
-    let cardHeaderRef = useRef(null)
-   
-   //animation references   
-    let zoom = useRef(null)
-    let zoomHeader = useRef(null)
-    let stretchCard = useRef(null)
+export default class Card extends Component {
+    constructor(props){
+        super(props)
+        this.cardRef = React.createRef();
+        this.cardHeaderRef = React.createRef();
+        this.zoom = React.createRef();
+        this.state = {
+            cardSize: {width: '100%', height: '100%'},
+            cardContainerSize: {width: '300px', height: '250px'},
+            isZoomed: false
+        }
+    }
 
-    const [cardSize, setCardSize] = useGlobal('cardSize')
-    const [isZoomed, setIsZoomed] = useGlobal('isZoomed')
-
-    function zoomIn() {
-        setIsZoomed(true)
-        let zoomFactor = 1.5
-        document.body.style.overflow = 'hidden'
-        let cardWidth = (parseInt(cardSize.width))
-        let screenCenter = (window.innerWidth
-            || document.documentElement.clientWidth
-            || document.body.clientWidth) / 2
-        let cardTop = -cardRef.getBoundingClientRect().top + 50 + 'px'
-        let cardLeft = cardRef.getBoundingClientRect().left 
-        let cardCenter = cardLeft + (cardWidth * zoomFactor / 2)
-        let moveX = screenCenter - cardCenter + 'px'
+    zoomIn = () => {
+        this.setState({isZoomed: true},
+            (previousState) => {
+                document.body.style.overflow = 'hidden'
+                let screenWidth = (window.innerWidth
+                    || document.documentElement.clientWidth
+                    || document.body.clientWidth)
+                let zoomFactor = 0.8 * screenWidth
+                let maxWidth = 1000
+                let cardTop = -this.cardRef.getBoundingClientRect().top + 50 + 'px'
+                let cardLeft = this.cardRef.getBoundingClientRect().left 
+                let maxMove = screenWidth > maxWidth ? screenWidth - maxWidth: screenWidth - zoomFactor 
+                let moveX = (maxMove / 2) - cardLeft + 'px'
+                
+                this.zoom.current = new TimelineLite()
+                this.zoom.current
+                    .to(this.cardRef, 0.35, {
+                        position: 'relative',
+                        top: cardTop,
+                        left: moveX,
+                        width: zoomFactor,
+                        height: 'auto',
+                        maxWidth: '1000px',
+                        zIndex: 6,
+                        cursor: 'default',
+                        overflowY: 'scroll',
+                        
+                    })
+                    
+                this.zoom.current.play()
+            })
         
-        zoom.current = new TimelineLite()
-        zoom.current.to(cardRef, 0.1, {
-            position: 'relative',
-            top: cardTop,
-            left: moveX
-        }).to(cardRef, 0.2, {
-            width: zoomFactor * 100 + '%' ,
-            height: zoomFactor * 100 + '%'
-        })
-
-        zoom.current.play()
     }
 
-    function zoomOut() {
-        setIsZoomed(false)
-        document.body.style.overflowY = 'scroll'
-        zoom.current.reversed(true)
+    zoomOut = () => {
+        this.setState({isZoomed: false},
+            (previousState) => {
+                document.body.style.overflowY = 'scroll'
+                this.zoom.current.reversed(true)
+            })
     }
 
-    function toggleZoom() {
-        isZoomed ? zoomOut() : zoomIn()
+    toggleZoom = () => {
+        this.state.isZoomed ? this.zoomOut() : this.zoomIn()
     }
 
-    return (
-        <div className='card-container'>
-            <div 
-                className='card'
-                ref={div => cardRef = div}
-                onClick={!isZoomed ? toggleZoom : null}
-                style={cardSize}
-                >
-                <CardHeader 
-                    title={title}
-                    icon={icon}
-                    subtitle={subtitle}
-                    src={src}
-                    cardHeaderRef={cardHeaderRef}
-                    isZoomed={isZoomed}
-                    toggleZoom={toggleZoom}
-                    />
-                <Transition in={isZoomed} timeout={200} >
-                    {(state) => (
-                        <div 
-                            className='content'
-                            style={{
-                                ...styles.content.default,
-                                ...styles.content.transition[state]
-                            }}
-                            >
-                            {content}
-                        </div>
-                    )}
-                </Transition>
+    render(){
+        let {title, icon, src, content} = this.props
+        return (
+            <div className='card-container' style={this.state.cardContainerSize}>
+                <div 
+                    className='card'
+                    ref={div => this.cardRef = div}
+                    onClick={!this.state.isZoomed ? this.toggleZoom : null}
+                    style={this.state.cardSize}
+                    >
+                    <CardHeader 
+                        title={title}
+                        icon={icon}
+                        src={src}
+                        cardHeaderRef={this.cardHeaderRef}
+                        isZoomed={this.state.isZoomed}
+                        toggleZoom={this.toggleZoom}
+                        />
+                    <Transition in={this.state.isZoomed} timeout={200} >
+                        {(state) => (
+                            <div 
+                                className='card-content'
+                                style={{
+                                    ...styles.content.default,
+                                    ...styles.content.transition[state]
+                                }}
+                                >
+                                {content}
+                            </div>
+                        )}
+                    </Transition>
+                </div>
             </div>
-        </div>
-
-        
-    )
+    
+            
+        )
+    }
+    
 }
+
+

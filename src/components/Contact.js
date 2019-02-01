@@ -9,6 +9,5 @@ export default (props) => (
     <div id='contact-content' className='content'>
       <ContactForm id='contact-form'/>
     </div>
-    
   </div>
 )
