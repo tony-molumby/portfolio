@@ -3,17 +3,15 @@ import createRule from './createRule'
 export default {
     card: {
         zoomIn: {
-            
+
         }
     },
     content: {
         default: {
-            // display: 'inline',
             transition: `all 500ms ease-in-out`,
             backgroundColor: 'white',
             padding: '20px',
-            // width: '100%',
-            // height: '100%',
+    
         },
         transition: {
             entering: { 

@@ -2,23 +2,24 @@ import React from 'react'
 
 import Card from './Card'
 
-export default ({items, id, className}) => {
+export default ({items, title}) => {
   return (
-    <div id={id} className={className}>
-      {
-        items.map((item, idx) => {
-          return (
-              <Card 
-                title={item.title}
-                icon={item.icon}
-                src={item.src}
-                content={item.content}
-                key={'card-' + idx}
-                />
-          )
-        })
-      }
+    <div>
+    <h2>{title}</h2>
+      <div className='mywork-cards comic-font'>
+        {
+          items.map((item, idx) => {
+            return (
+                <Card 
+                  item={item}
+                  key={'card-' + idx}
+                  />
+            )
+          })
+        }
+      </div>
     </div>
+    
   )
 }
   

@@ -4,13 +4,13 @@ import CloseBtn from '../components/CloseBtn'
 
 import styles from '../styles/card'
 
-export default ({title, subtitle, icon, src, cardHeaderRef, isZoomed, toggleZoom}) => {
+export default React.forwardRef(({title, subtitle, icon, src, isZoomed, toggleZoom}, ref) => {
     let imageSrc = require('../images/mywork/' + src)
 
     return (
         <div 
             className='card-header' 
-            ref={cardHeaderRef} 
+            ref={ref} 
             style={{
                 backgroundImage: 'url(' + imageSrc + ')', 
                 backgroundPosition: 'center top', 
@@ -39,4 +39,4 @@ export default ({title, subtitle, icon, src, cardHeaderRef, isZoomed, toggleZoom
 			</Transition> 
         </div>
     )
-}
+})

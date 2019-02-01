@@ -15,8 +15,8 @@ export default class Card extends Component {
         this.cardHeaderRef = React.createRef();
         this.zoom = React.createRef();
         this.state = {
-            cardSize: {width: '100%', height: '100%'},
-            cardContainerSize: {width: '300px', height: '250px'},
+            cardSize: {width: '100%', height: '100%', },
+            cardContainerSize: {width: '350px', height: '300px'},
             isZoomed: false
         }
     }
@@ -47,7 +47,12 @@ export default class Card extends Component {
                         zIndex: 6,
                         cursor: 'default',
                         overflowY: 'scroll',
-                        
+                        gridTemplateRows: '50vh 1fr',
+                        backgroundColor: 'white'
+                    })
+                    .to(this.cardHeaderRef.current, 0.35, {
+                        backgroundPosition: 'center',
+                        // gridTemplateRows: '2fr 1fr'
                     })
                     
                 this.zoom.current.play()
@@ -68,7 +73,7 @@ export default class Card extends Component {
     }
 
     render(){
-        let {title, icon, src, content} = this.props
+        let {title, icon, src, content, tech, image, web, github} = this.props.item
         return (
             <div className='card-container' style={this.state.cardContainerSize}>
                 <div 
@@ -81,7 +86,7 @@ export default class Card extends Component {
                         title={title}
                         icon={icon}
                         src={src}
-                        cardHeaderRef={this.cardHeaderRef}
+                        ref={this.cardHeaderRef}
                         isZoomed={this.state.isZoomed}
                         toggleZoom={this.toggleZoom}
                         />
@@ -95,6 +100,30 @@ export default class Card extends Component {
                                 }}
                                 >
                                 {content}
+                                <br></br>
+                                <br></br>
+                                <div>Technologies Used: {tech}</div>
+                                <div className='card-icons'>
+                                     {
+                                        github != undefined && github.length > 0 &&
+                                            <div className='mywork-links'>
+                                                <a href={github}>
+                                                    <i class="fab fa-github-square"></i>
+                                                    <div>Github</div>
+                                                </a>
+                                            </div>
+                                    }
+                                     {
+                                        web != undefined && web.length > 0 &&
+                                            <div className='mywork-links'>
+                                                <a href={web}>
+                                                    <i class="fas fa-globe"></i>
+                                                <   div>Web</div>
+                                                </a>
+                                            </div>
+                                    }
+                                   
+                                </div>
                             </div>
                         )}
                     </Transition>

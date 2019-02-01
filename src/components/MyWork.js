@@ -30,15 +30,18 @@ export default (props) => (
         <span id='quote-attribution'>- Ryan Holliday</span>
       </p>
       <div>
-        <h2 id='mywork-samples-heading' className='boom-font'>Samples of my work</h2>
+        <h2 id='mywork-samples-heading' className='boom-font red-text-box shadow'>Samples of my work</h2>
       </div>
     </div>
-    <WorkCards
-      id='mywork-cards'
-      className='comic-font'
-      items={items.design}
+    <div className='mywork-section'>
+      <WorkCards
+        items={items.development}
+        title='Web Development / Engineering'
       />
-    {/* <h2 id='about-action-text'>Call to Action Text</h2> */}
-    
+      <WorkCards
+        items={items.design}
+        title='Design / Prototyping'
+        />
+      </div>
   </div>
 )
