@@ -106,8 +106,8 @@ export default class Card extends Component {
                                 <div className='card-icons'>
                                      {
                                         github != undefined && github.length > 0 &&
-                                            <div className='mywork-links'>
-                                                <a href={github}>
+                                            <div className='card-links'>
+                                                <a href={github} style={{textDecoration: 'none'}}>
                                                     <i class="fab fa-github-square"></i>
                                                     <div>Github</div>
                                                 </a>
@@ -115,8 +115,8 @@ export default class Card extends Component {
                                     }
                                      {
                                         web != undefined && web.length > 0 &&
-                                            <div className='mywork-links'>
-                                                <a href={web}>
+                                            <div className='card-links'>
+                                                <a href={web} style={{textDecoration: 'none'}}>
                                                     <i class="fas fa-globe"></i>
                                                 <   div>Web</div>
                                                 </a>
