@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactSVG from 'react-svg'
 
 import Social from './Social'
 
@@ -14,7 +13,7 @@ export default (props) => (
       id='home-subheading' 
       className='shadow red-text-box subheading box-shadow'
       >
-      Web Developer, Product Owner, Clinician... and Super Hero?
+      Web Developer, Product Owner, Clinician and ...
     </h2>
     <Social id='social-home' />
     {/* <BurstBackground id='burst-background'/> */}

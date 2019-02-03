@@ -8,10 +8,11 @@ export default (props) => (
     <h2 id='contact-subheading' className='shadow red-text-box subheading page-subheading'>Together we can conquer any foe</h2>
     <div id='contact-content' className='content'>
       <div id='contact-form-container'>
-        <h3 className='comic-font'>
+        <h2>Contact Me</h2>
+        <p className='comic-font'>
           If you like my work and are looking for a front-end
           or full-stack developer please contact me and let's collaborate.
-        </h3>
+        </p>
         <ContactForm id='contact-form'/>
       </div>
       

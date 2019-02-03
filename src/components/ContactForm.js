@@ -18,7 +18,7 @@ class ContactForm extends Component {
     }
 
     handleChange = (e) => {
-        let {name, email, message, submitButton} = this.state;
+        let {name, email, message} = this.state;
         let element = ''
         let valid = document.getElementById('email').validity.valid
         this.setState({

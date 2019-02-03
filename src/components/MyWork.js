@@ -11,9 +11,9 @@ export default (props) => (
       <p>
       I have worked with large and small organizations in a variety 
       of roles and believe in the idea of a &nbsp;
-        <a style={{color: '#0CAFFA'}} href='https://medium.com/@anthonyambriz/jack-of-all-trades-master-of-many-22a6dbd6a86a'>
+        <span id='article' onClick={()=> window.open('https://medium.com/@anthonyambriz/jack-of-all-trades-master-of-many-22a6dbd6a86a', 'blank')}>
           Jack of All Trades, Master of Many.
-        </a>
+        </span>
       </p>
       <p>
         The TLDR version:          

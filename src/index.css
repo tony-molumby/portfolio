@@ -228,8 +228,13 @@
         text-align: center;
     }
 
-    a.social-links {
+    .social-links {
         text-decoration: none;
+        cursor: pointer;
+    }
+
+    .social-links:hover {
+        text-decoration: underline;
     }
 
     /* Common Page Styles ========== */
@@ -265,7 +270,7 @@
 /* About Styles ========== */
 
     #about-banner {
-        background: url(images/new.svg) no-repeat;
+        background: url(images/about.svg) no-repeat;
         background-size: cover;
         background-position: top;
         margin-left: -35px;
@@ -287,6 +292,15 @@
     background: url(images/myWork.svg) no-repeat;
     background-size: cover;
     background-position: top; 
+}
+
+#article {
+    color: #0CAFFA;
+    cursor: pointer;
+}
+
+#article:hover {
+    text-decoration: underline;
 }
 
 #quote {
@@ -313,6 +327,8 @@
     grid-column: 1/5;
     padding: 20px;
 }
+
+
 
 /* Contact Styles ========= */
 
@@ -485,12 +501,16 @@
     flex-flow: column nowrap;
     padding: 20px;
     color: #FA7D16;
+    cursor: pointer;
 }
 
 .card-links:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    text-decoration: underline;
 }
 
+.fa {
+    text-decoration: none;
+}
 
 /* Media Queries ========== */
 
@@ -525,7 +545,7 @@
     }
 
     .page {
-        grid-template-columns: 1fr 3fr 3fr 1fr;
+        grid-template-columns: 1fr 3fr auto 1fr;
     }
 
     .banner {

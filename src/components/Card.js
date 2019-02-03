@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {useGlobal} from 'reactn'
 
 //animations
 import {TimelineLite, Back} from 'gsap/TweenMax'
@@ -72,6 +71,10 @@ export default class Card extends Component {
         this.state.isZoomed ? this.zoomOut() : this.zoomIn()
     }
 
+    handleClick = (url) => {
+        window.open(url, 'blank')
+    }
+
     render(){
         let {title, icon, src, content, tech, image, web, github} = this.props.item
         return (
@@ -105,21 +108,17 @@ export default class Card extends Component {
                                 <div>Technologies Used: {tech}</div>
                                 <div className='card-icons'>
                                      {
-                                        github != undefined && github.length > 0 &&
-                                            <div className='card-links'>
-                                                <a href={github} style={{textDecoration: 'none'}}>
-                                                    <i class="fab fa-github-square"></i>
-                                                    <div>Github</div>
-                                                </a>
+                                        github !== undefined && github.length > 0 &&
+                                            <div className='card-links' onClick={() => this.handleClick(github)}>
+                                                <i className="fab fa-github-square"></i>
+                                                <div>Github</div>
                                             </div>
                                     }
                                      {
-                                        web != undefined && web.length > 0 &&
-                                            <div className='card-links'>
-                                                <a href={web} style={{textDecoration: 'none'}}>
-                                                    <i class="fas fa-globe"></i>
-                                                <   div>Web</div>
-                                                </a>
+                                        web !== undefined && web.length > 0 &&
+                                            <div className='card-links' onClick={() => this.handleClick(web)}>
+                                                <i className="fas fa-globe"></i>
+                                                <div>Web</div>
                                             </div>
                                     }
                                    
