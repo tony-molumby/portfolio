@@ -19,28 +19,27 @@ export default (props) => (
         The TLDR version:          
       </p>
       <p id='quote' className='comic-font-italic'>
-        If you do one thing, you’d be very good at it. 
-        If you do two things, you feel really busy. If you do 
-        three or five things, you’re not that busy and they 
-        all help each other and make you better at them. 
-        It speeds the whole process of learning new skills 
-        and getting more done.
+      Jack of all trades, master of none, is an antiquated and unfair pairing.
+      In fact, there’s an increasing need in our entrepreneurial culture
+      for Renaissance thinkers and doers. Due to the rise of the digital world, 
+      it is more necessary and feasible than ever for a modern entrepreneur 
+      to be a jack of all trades, master of many.
         <br></br>
         <br></br>
-        <span id='quote-attribution'>- Ryan Holliday</span>
+        <span id='quote-attribution'>- Tyler Ward</span>
       </p>
       <div>
         <h2 id='mywork-samples-heading' className='boom-font red-text-box shadow'>Samples of my work</h2>
       </div>
     </div>
-    <div className='mywork-section'>
+    <div id='mywork-section'>
       <WorkCards
         items={items.development}
         title='Web Development / Engineering'
       />
       <WorkCards
         items={items.design}
-        title='Design / Prototyping'
+        title='Design and Prototyping'
         />
       </div>
   </div>

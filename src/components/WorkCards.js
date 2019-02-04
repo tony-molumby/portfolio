@@ -5,7 +5,7 @@ import Card from './Card'
 export default ({items, title}) => {
   return (
     <div>
-    <h2>{title}</h2>
+    <h2 id='mywork-type-heading'>{title}</h2>
       <div className='mywork-cards comic-font'>
         {
           items.map((item, idx) => {

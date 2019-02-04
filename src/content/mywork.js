@@ -60,7 +60,7 @@ export default {
     {
       icon: 'fas fa-ad',
       title: 'Game Of Life',
-      src: 'gameOfLife.png',
+      src: 'gameoflife.png',
       content: 
         `
           Also known as Conway's game of Life is a cellular automaton and a zero-player game.

@@ -31,9 +31,8 @@ export default (props) => (
       <p>
         To learn more about my work experience please check out my CV below!
       </p>
+      <Social id='social-about'/>
     </div>
-    <Social id='social-about'/>
-    {/* <h2 id='about-action-text'>Call to Action Text</h2> */}
     
   </div>
 )
