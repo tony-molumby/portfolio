@@ -11,7 +11,7 @@ export default (props) => (
         <h2>Contact Me</h2>
         <p className='comic-font'>
           If you like my work and are looking for a front-end
-          or full-stack developer in the San Francisco Bay Area, or for a remote position,
+          or full-stack developer in the San Francisco Bay Area, Philadelphia, PA or for a remote position,
           please contact me and let's collaborate.
         </p>
         <ContactForm id='contact-form'/>
