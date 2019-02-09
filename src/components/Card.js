@@ -15,7 +15,7 @@ export default class Card extends Component {
         this.zoom = React.createRef();
         this.state = {
             cardSize: {width: '100%', height: '100%', },
-            cardContainerSize: {width: '350px', height: '300px'},
+            cardContainerSize: {width: '325px', height: '275px'},
             isZoomed: false
         }
     }

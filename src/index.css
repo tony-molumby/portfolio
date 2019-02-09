@@ -316,13 +316,14 @@
     border: 2px solid black;
 }
 
+
 .mywork-cards {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
 
-.mywork-section {
+#mywork-section {
     grid-row: 3/4;
     grid-column: 1/5;
     padding: 20px 20px 20px 20px;
