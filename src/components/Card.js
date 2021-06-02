@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 //animations
-import {TimelineLite, Back} from 'gsap/TweenMax'
+import {TimelineLite} from 'gsap/TweenMax'
 import {Transition} from 'react-transition-group'
 
 import styles from '../styles/card'
@@ -76,7 +76,7 @@ export default class Card extends Component {
     }
 
     render(){
-        let {title, icon, src, content, tech, image, web, github} = this.props.item
+        let {title, icon, src, content, tech, web, github} = this.props.item
         return (
             <div className='card-container' style={this.state.cardContainerSize}>
                 <div 
