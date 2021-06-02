@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 //animations
-import {TimelineLite, Back} from 'gsap/TweenMax'
+import {gsap} from 'gsap'
 import {Transition} from 'react-transition-group'
 
 import styles from '../styles/card'
@@ -34,7 +34,7 @@ export default class Card extends Component {
                 let maxMove = screenWidth > maxWidth ? screenWidth - maxWidth: screenWidth - zoomFactor 
                 let moveX = (maxMove / 2) - cardLeft + 'px'
                 
-                this.zoom.current = new TimelineLite()
+                this.zoom.current = gsap.timeline();
                 this.zoom.current
                     .to(this.cardRef, 0.35, {
                         position: 'relative',
@@ -76,7 +76,7 @@ export default class Card extends Component {
     }
 
     render(){
-        let {title, icon, src, content, tech, image, web, github} = this.props.item
+        let {title, icon, src, content, tech, web, github} = this.props.item
         return (
             <div className='card-container' style={this.state.cardContainerSize}>
                 <div 
